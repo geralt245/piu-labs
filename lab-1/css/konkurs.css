@@ -1,0 +1,149 @@
+html {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 48px 20px;
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center;
+}
+
+.change-mode {
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.change-mode:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.contest-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 36px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #bfbfbf;
+  background-color: #fff;
+}
+
+label {
+  font-weight: 600;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+select,
+textarea {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+  color: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #51bc55;
+  box-shadow: 0 0 4px rgba(81, 188, 85, 0.5);
+  outline: none;
+}
+
+.name-box,
+.last-name-box,
+.email-box,
+.city-box,
+.birth-box,
+.jobs-box,
+.color-box,
+.category-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input[type="color"] {
+  width: 100%;
+  padding: 0;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: transparent;
+}
+
+fieldset legend {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.publish-yes,
+.publish-no {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accept-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+input[type="submit"] {
+  padding: 16px;
+  color: #fff;
+  background-color: #57c85a;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body:has(#mode:checked) .contest-form {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 20px #000;
+}
+
+body:has(#mode:checked) .contest-form input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+body:has(#mode:checked) .contest-form select,
+body:has(#mode:checked) .contest-form textarea {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}

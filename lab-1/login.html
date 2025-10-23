@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="login-page">
+    <h1 class="login">Logowanie</h1>
+    <a href="./index.html" class="login-back">Powrót</a>
+    <form action="https://httpbin.org/post" method="post">
+        <div class="login-box">
+            <label for="username">Nazwa użytkownika</label>
+            <input type="text" id="username" name="username"/>
+        </div>
+
+        <div class="password-box">
+            <label for="pass">Hasło (co najmniej 8 znaków)</label>
+            <input type="password" id="pass" name="password" minlength="8" required/>
+        </div>
+
+        <input type="submit" value="Zaloguj">
+    </form>
+</body>
+</html>
