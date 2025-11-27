@@ -1,19 +1,73 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+body.index-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2e;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+h1.lab-1 {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 1.2rem;
+  color: #a6accd;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a.index-back {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  text-decoration: none;
+  color: #f7768e;
+  font-weight: bold;
+  border: 1px solid #f7768e;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+a.index-back:hover {
+  background-color: #f7768e;
+  color: #fff;
+}
+
+h1.index-name {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+nav.links {
+  display: flex;
+  gap: 20px;
+}
+
+nav.links a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #2f334d;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+nav.links a:hover {
+  background-color: #444b6e;
+  transform: translateY(-5px);
 }
