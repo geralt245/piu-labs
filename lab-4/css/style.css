@@ -1,19 +1,191 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
-  padding: 0;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef;
+  color: #333;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+.top-bar {
+  background-color: #343a40;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.top-bar a {
+  color: #adb5bd;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.top-bar a:hover {
+  color: #fff;
+}
+
+.board {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-x: auto;
+  min-height: calc(100vh - 80px);
+  align-items: flex-start;
+}
+
+.column {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  width: 350px;
+  min-width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #dee2e6;
+  max-height: 85vh;
+}
+
+.column-header {
+  padding: 1rem;
+  border-bottom: 2px solid #e9ecef;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 0;
+}
+
+.column-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #495057;
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  background: #e9ecef;
+  color: #6c757d;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.column-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.column-controls button {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.column-controls button:hover {
+  background-color: #e2e6ea;
+  border-color: #adb5bd;
+}
+
+.card-list {
+  padding: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 100px;
+}
+
+.kanban-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  outline: none;
+  cursor: text;
+  min-height: 1.5em;
+}
+
+.card-content:focus {
+  background-color: rgba(255,255,255, 0.5);
+  border-radius: 4px;
+}
+
+.btn-delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: rgba(0,0,0,0.4);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.btn-delete:hover {
+  color: #dc3545;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.action-btn {
+  background: rgba(255,255,255, 0.6);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 8px;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background: rgba(255,255,255, 0.9);
+}
+
+#col-todo .action-btn.move-left {
+  visibility: hidden;
+}
+
+#col-done .action-btn.move-right {
+  visibility: hidden;
 }
